@@ -154,8 +154,16 @@ public class Blackjack
 			System.out.println("Dealer total is: " + dealerTotal);
 			
 			//asks if player would like to continue
-			System.out.print("Would you like another card?");
+			System.out.print("Would you like another card?(NO=1 YES=any other number)");
 			Scanner scanner1 = new Scanner(System.in);
+			
+			//makes sure a integer is entered
+			while (!scanner1.hasNextInt())
+			{
+	   			System.out.println("Pick a number please!");
+	   			scanner1.nextLine();
+			}
+			
 			int choice = scanner1.nextInt();
 			playerCardDrawn++;
 			
@@ -176,7 +184,14 @@ public class Blackjack
 				System.out.println("Your total is: " + total);
 				card.setCardNumber();
 				playerCardDrawn++;
-				System.out.print("Would you like another card?");
+				System.out.print("Would you like another card?(NO=1 YES=any other number)");
+				
+				//makes sure a integer is entered
+				while (!scanner1.hasNextInt())
+				{
+		   			System.out.println("Pick a number please!");
+		   			scanner1.nextLine();
+				}
 				choice = scanner1.nextInt();		
 			}
 	
@@ -249,8 +264,17 @@ public class Blackjack
 			System.out.println("Your bank is now $ " + player.getBank());			
 			System.out.println("Your win total is " + player.getWins());			
 			System.out.println("Total hands played: " + player.getHandsPlayed());			
-			System.out.print("Do you wish to play again?");
+			System.out.print("Do you wish to play again?(NO=1 YES=any other number)");
+			
+			
+			//makes sure a integer is entered
+			while (!scanner1.hasNextInt())
+			{
+	   			System.out.println("Pick a number please!");
+	   			scanner1.nextLine();
+			}
 			answer = scanner1.nextInt();
+			
 		}while(answer != 1);
 		
 		//shows end of game stats
